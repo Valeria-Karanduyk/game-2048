@@ -57,7 +57,7 @@ async function handleInput(event) {
   if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
     await newTile.waitForTransitionEnd();
     alert("Try again!");
-    // return;
+    return;
   }
 
   setupInputOnce();
