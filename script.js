@@ -55,7 +55,7 @@ async function handleInput(event) {
   grid.getRandomEmptyCell().linkTile(newTile);
 
   if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
-    await newTile.waitForTransitionEnd();
+    // await newTile.waitForTransitionEnd();
     alert("Try again!");
     return;
   }
