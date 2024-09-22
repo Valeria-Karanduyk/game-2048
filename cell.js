@@ -13,7 +13,7 @@ export class Cell {
   }
 
   unlinkTile() {
-    this.linkTile = null;
+    this.linkedTile = null;
   }
 
   isEmpty() {
@@ -41,10 +41,12 @@ export class Cell {
   }
 
   mergeTiles() {
-    this.linkedTile.setValue(
-      this.linkedTile.value + this.linkedTileForMerge.value
-    );
-    this.linkedTileForMerge.removeFromDOM();
-    this.unlinkTileForMerge();
+    if (this.linkedTile && this.linkedTileForMerge) {
+      this.linkedTile.setValue(
+        this.linkedTile.value + this.linkedTileForMerge.value
+      );
+      this.linkedTileForMerge.removeFromDOM();
+      this.unlinkTileForMerge();
+    }
   }
 }

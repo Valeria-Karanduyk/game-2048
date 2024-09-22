@@ -36,7 +36,7 @@ export class Tile {
     });
   }
 
-  waitForTransitionEnd() {
+  waitForAnimationEnd() {
     return new Promise((resolve) => {
       this.tileElement.addEventListener("animationend", resolve, {
         once: true,
